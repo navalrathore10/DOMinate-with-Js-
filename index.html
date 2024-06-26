@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Section with Dynamic Background</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <style>
+
+    </style>
+</head>
+
+<body class="bg-gray-100 flex flex-col items-center justify-center h-min w-full p-5">
+
+    <!-- -------------------------------------------------------------------------  Header Section Starts -->
+    <header class="fixed z-20 top-0 w-full h-min py-4 sm:h-[70px] flex items-center shadow-lg  backdrop-blur-md bg-[#ffffff44]">
+        <div class="container mx-auto flex sm:flex-row flex-col justify-between items-center">
+            <h1 class="text-2xl font-bold text-poppins">
+                < DOMination>
+            </h1>
+            <nav class="space-x-4 flex flex-wrap px-4 justify-center">
+                <a href="#todo" class="hover:text-gray-400">To-Do</a>
+                <a href="#notes" class="hover:text-gray-400">Notes</a>
+                <a href="#colorpicker" class="hover:text-gray-400">Color Picker</a>
+                <a href="#slider" class="hover:text-gray-400">Slider</a>
+                <a href="#gallery" class="hover:text-gray-400">Gallery</a>
+                <a href="#faq" class="hover:text-gray-400">FAQ</a>
+            </nav>
+        </div>
+    </header>
+    <div class="header-back h-[70px] w-full"></div>
+
+    <!-- -------------------------------------------------------------------------  Image Gallery Section Starts -->
+    <div id="gallery" class="w-full h-screen relative rounded-lg shadow-lg mb-4
+            bg-[url('https://images.unsplash.com/photo-1536495388920-2045095d0c9c?q=80&w=1771&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')]
+
+            bg-cover bg-center">
+        <div
+            class="absolute right-[100px] top-[50%] translate-y-[-50%] p-4 flex flex-col justify-center items-center gap-2">
+            <img src="https://images.unsplash.com/photo-1536495388920-2045095d0c9c?q=80&w=1771&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Image 1"
+                class="thumbnail cursor-pointer transition-all duration-200 hover:scale-[1.1] w-[200px] h-[150px] rounded shadow-lg">
+            <img src="https://images.unsplash.com/photo-1641981344598-d14b7d99524f?q=80&w=1769&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Image 2"
+                class="thumbnail cursor-pointer transition-all duration-200 hover:scale-[1.1] w-[200px] h-[150px] rounded shadow-lg">
+            <img src="https://images.unsplash.com/photo-1661923935619-0bfe481d0b0e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Image 3"
+                class="thumbnail cursor-pointer transition-all duration-200 hover:scale-[1.1] w-[200px] h-[150px] rounded shadow-lg">
+            <img src="https://images.unsplash.com/photo-1639580926953-1bbfdbc61591?q=80&w=1810&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Image 4"
+                class="thumbnail cursor-pointer transition-all duration-200 hover:scale-[1.1] w-[200px] h-[150px] rounded shadow-lg">
+        </div>
+    </div>
+
+    <!-- -------------------------------------------------------------------------  slider Section Starts -->
+
+
+    <div class="slider-section w-full flex flex-col  justify-center items-center" id="slider">
+        <div class="text-red-500 mt-[50px] opacity-50">
+            * Note : For best UI open this on Larger Screen like desktop
+        </div>
+        <div
+            class="slider max-w-[90%] border border-red md:w-full lg:max-w-[1200px] h-[200px] shadow-lg flex flex-col items-center justify-evenly rounded-lg border mb-[50px] bg-white p-[20px] gap-2">
+            <div class="sliderbtns w-full h-[50px] flex justify-between gap-[10px] sm:pe-[50px]">
+                <div class="slider-title">
+                    <h2 class="text-md sm:text-2xl font-light text-[#242424] text-poppins">Famous Footballers</h2>
+                </div>
+                <div class="btns">
+                    <button id="prv">
+                        <i
+                            class="flex justify-center items-center fa-solid fa-left-long w-[40px] h-[40px] rounded-full border border-gray-500 text-gray-500"></i>
+                    </button>
+                    <button id="nxt">
+                        <i
+                            class="flex justify-center items-center fa-solid fa-right-long w-[40px] h-[40px] rounded-full border border-gray-500 text-gray-500"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="imageslider relative w-full overflow-hidden">
+                <div class="innerslider h-full flex rounded-[10px] transition-all duration-1000 ease-in-out gap-2"
+                    id="InnerSlider">
+                    <!-- Your slider images here -->
+                    <div class="transition-all duration-1500 slider-image min-w-[120px] h-[120px] bg-cover bg-center rounded shadow-lg bg-[url('https://www.mykhel.com/thumb/250x90x250/football/players/4/19054.jpg')]
+                        ">
+                    </div>
+                    <div class="transition-all duration-1500 slider-image min-w-[120px] h-[120px] bg-cover bg-center rounded shadow-lg bg-[url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgstC2bjhxAp7B3W6T1zX96GXxTzyhl4Tu7JuTMIQ1A9QZNpOK_V2nI8F9qop5jQihaSY&usqp=CAU')]
+                        ">
+                    </div>
+                    <div class="transition-all duration-1500 slider-image min-w-[120px] h-[120px] bg-cover bg-center rounded shadow-lg bg-[url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrfC5TPxkYkOZGUqB4g7UTuasWX1hs38X5uw&s')]
+                        ">
+                    </div>
+                    <div
+                        class="transition-all duration-1500 slider-image min-w-[120px] h-[120px] bg-cover bg-center rounded shadow-lg bg-[url('https://s.hs-data.com/bilder/spieler/gross/43635.jpg')]">
+                    </div>
+                    <div
+                        class="transition-all duration-1500 slider-image min-w-[120px] h-[120px] bg-cover bg-center rounded shadow-lg bg-[url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdJrXpqDy9sFmrzMh1NjnW1fOXHoY6UpCZBw&s')]">
+                    </div>
+                    <div
+                        class="transition-all duration-1500 slider-image min-w-[120px] h-[120px] bg-cover bg-center rounded shadow-lg bg-[url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQHN8RYy95QhqaZBqIOBrvHchetIP3LJ03iw&s')]">
+                    </div>
+                    <div
+                        class="transition-all duration-1500 slider-image min-w-[120px] h-[120px] bg-cover bg-center rounded shadow-lg bg-[url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNR5eAQDl4VGNiWXOeK0tK5q-cS5ednHn6Bg&s')]">
+                    </div>
+                    <div class="transition-all duration-1500 slider-image min-w-[120px] h-[120px] bg-cover bg-center rounded shadow-lg bg-[url('https://img.bleacherreport.net/img/images/photos/003/406/920/hi-res-7e445d0ec0d6b5cce3fee7b22fe74b6a_crop_north.jpg?1432129815&w=3072&h=2048')]
+                        ">
+                    </div>
+                    <div
+                        class="transition-all duration-1500 slider-image min-w-[120px] h-[120px] bg-cover bg-center rounded shadow-lg bg-[url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7Cb1Tv8iTWl0R0JQxHRHGWA5ygv1GTEVbxQ&s')]">
+                    </div>
+                    <div
+                        class="transition-all duration-1500 slider-image min-w-[120px] h-[120px] bg-cover bg-center rounded shadow-lg bg-[url('https://img.vavel.com/c700_475_3800763-77305188-2560-1440-1698005483328.jpg')]">
+                    </div>
+                    <div
+                        class="transition-all duration-1500 slider-image min-w-[120px] h-[120px] bg-cover bg-center rounded shadow-lg bg-[url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDxekhJ0bHCp90EkhMOLHhDKWGpxTeOF7GIg&s')]">
+                    </div>
+                    <div
+                        class="transition-all duration-1500 slider-image min-w-[120px] h-[120px] bg-cover bg-center rounded shadow-lg bg-[url('https://cdn.siasat.com/wp-content/uploads/2024/05/Karim-Benzema.jpg')]">
+                    </div>
+                    <div class="transition-all duration-1500 slider-image min-w-[120px] h-[120px] bg-cover bg-center rounded shadow-lg bg-[url('https://upload.wikimedia.org/wikipedia/commons/b/ba/Russia-Spain_2017_%2811%29.jpg')]
+                        ">
+                    </div>
+                    <div class="transition-all duration-1500 slider-image min-w-[120px] h-[120px] bg-cover bg-center rounded shadow-lg bg-[url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6Hb-PClX7mXzIla8U-NepDIffFaCYIYmL0w&s')]
+                        ">
+                    </div>
+                    <div class="transition-all duration-1500 slider-image min-w-[120px] h-[120px] bg-cover bg-center rounded shadow-lg 
+                        bg-[url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZNljI7NpJ3-QUvG9L8w0ygmE4lN3rnFwaZw&s')]
+                        ">
+                    </div>
+                    <div class="transition-all duration-1500 slider-image min-w-[120px] h-[120px] bg-cover bg-center rounded shadow-lg 
+                        bg-[url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVGlghlh5Vs3W9UEL8Cmstqa5x6CiGsb7mYg&s')]
+                        ">
+                    </div>
+                    <div class="transition-all duration-1500 slider-image min-w-[120px] h-[120px] bg-cover bg-center rounded shadow-lg 
+                        bg-[url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0PZFs1XCewFHjfb6Pg8aDAApNafEFukH5Xg&s')]
+                        ">
+                    </div>
+                    <div class="transition-all duration-1500 slider-image min-w-[120px] h-[120px] bg-cover bg-center rounded shadow-lg 
+                        bg-[url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpMfJJDzL_hA0c7xLwAcS7uAWCiUkKben0xg&s')]
+                        ">
+                    </div>
+                    <div class="transition-all duration-1500 slider-image min-w-[120px] h-[120px] bg-cover bg-center rounded shadow-lg 
+                        bg-[url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1ah8K24Ut39NPateObyY2ipq6cRijhY8LDA&s')]
+                        ">
+                    </div>
+                    <div class="transition-all duration-1500 slider-image min-w-[120px] h-[120px] bg-cover bg-center rounded shadow-lg 
+                        bg-[url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyi6fX-8xEqodtTIZEyipxNVmIR_mqsQzNPA&s')]
+                        ">
+                    </div>
+                    <div class="transition-all duration-1500 slider-image min-w-[120px] h-[120px] bg-cover bg-center rounded shadow-lg 
+                        bg-[url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7FvMLPDb3VV6aus76NGYvsG6HXKROc94tIA&s')]
+                        ">
+                    </div>
+                    <div class="transition-all duration-1500 slider-image min-w-[120px] h-[120px] bg-cover bg-center rounded shadow-lg 
+                        bg-[url('https://upload.wikimedia.org/wikipedia/commons/c/c4/Courtois_2018_%28cropped%29.jpg')]
+                        ">
+                    </div>
+                    <div class="transition-all duration-1500 slider-image min-w-[120px] h-[120px] bg-cover bg-center rounded shadow-lg 
+                        bg-[url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQX_ImPazBf2hGn6Lh5Xv8Fq_WCSApFUSL7g&s')]
+                        ">
+                    </div>
+                    <div class="transition-all duration-1500 slider-image min-w-[120px] h-[120px] bg-cover bg-center rounded shadow-lg 
+                        bg-[url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSVKK1ci6AzvHW5r-lTG3TKiu0RevSviyNqg&s')]
+                        ">
+                    </div>
+                    <div class="transition-all duration-1500 slider-image min-w-[120px] h-[120px] bg-cover bg-center rounded shadow-lg 
+                        bg-[url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSx1tr1h3MNV5g8c6kFtchg_cbr_ZDfSLCigQ&s')]
+                        ">
+                    </div>
+                    <div class="transition-all duration-1500 slider-image min-w-[120px] h-[120px] bg-cover bg-center rounded shadow-lg 
+                        bg-[url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJMkqX2Yxf__QYvKhr9MdWyMDquO20ZhiD_Q&s')]
+                        ">
+                    </div>
+                    <div class="transition-all duration-1500 slider-image min-w-[120px] h-[120px] bg-cover bg-center rounded shadow-lg 
+                        bg-[url('https://mundoalbiceleste.com/wp-content/uploads/2021/06/20210616_082424_resize_10.jpg')]
+                        ">
+                    </div>
+                    <!-- Add more slider-image divs as needed -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 
+
+
+
+     -->
+
+    <!-- -------------------------------------------------------------------------  to-do & Notes Section Starts -->
+
+
+    <div class="container mx-auto py-10 flex justify-evenly lg:flex-row flex-col gap-10 items-top" id="todo">
+
+
+        <!--  to-do -->
+
+        <div class="to-do-app bg-white p-8 rounded-lg min-w-full sm:min-w-[500px] min-h-[300px] h-min mx-auto">
+            <h2 class="app-title text-2xl font-semibold flex items-center justify-center mb-6">
+                To-Do List <i class="fas fa-clipboard-list ml-2"></i>
+            </h2>
+            <div class="row flex items-center">
+                <input type="text" id="todo-input-box" placeholder="Add your Task here"
+                    class="flex-grow px-4 py-2 rounded-l-lg bg-[#e3e3e3] text-[#242424] outline-none">
+                <button onclick="addTask()" class="px-4 py-2 bg-yellow-300 rounded-r-lg hover:bg-yellow-400 text-gray">
+                    Add
+                </button>
+            </div>
+
+            <ul id="list-container" class="mt-6">
+                <!-- Task items will be added here dynamically -->
+            </ul>
+        </div>
+
+        <!--  Notes -->
+
+        <div class="notes-app bg-white p-8 rounded-lg min-w-full sm:min-w-[500px] h-min mx-auto" id="notes">
+            <h2 class="app-title text-2xl font-semibold flex items-center justify-center mb-6">
+                Notes App &nbsp; <i class="fa-solid fa-pen-to-square"></i>
+            </h2>
+            <div class="row flex items-top">
+                <textarea type="text" id="notes-input-box" placeholder="Note it Down" style="resize: none;"
+                    class="flex-grow px-4 py-2 rounded-l-lg bg-[#e3e3e3] text-[#242424] outline-none h-[100px] rounded-[0px_0px_10px_0px]"></textarea>
+                <button onclick="addNote()"
+                    class="px-4 py-2 h-[50px] bg-yellow-300 rounded-r-lg hover:bg-yellow-400 text-gray">
+                    Add
+                </button>
+            </div>
+            <ul id="notes-container" class="grid grid-cols-2 gap-5 mt-5">
+
+            </ul>
+        </div>
+    </div>
+
+
+    <!-- ------------------------------------------------------------------------ Color-Picker Starts Here -->
+
+
+    <div class="color-picker-Section w-full h-min" id="colorpicker">
+        <div class="section1 max-w-[1200px] mx-auto p-[50px_0px] flex xl:flex-row flex-col justify-between items-center gap-9">
+            <div class="tool_title text-7xl font-semibold text-[#242424] md:text-[120px] text-center">
+                <h1>Color Picker</h1>
+            </div>
+
+            <div class="hero_tk_inner p-[20px] bg-white border border-black rounded-[40px] shadow-xl">
+                <div class="colorPicker">
+                    <div id="colorBox"
+                        class="border border-black bg-yellow-200 shadow-md w-[300px] md:w-[400px] h-[150px] md:h-[200px] rounded-[20px] transition-all duration-800"></div>
+                    <div class="flex w-full h-min justify-evenly items-center ">
+                        <div class="console_arrows w-[100px] h-[100px]">
+                            <img src="img/Console_Arrows.png" alt="">
+                        </div>
+                        <div class="sliders w-[200px] h-min gap-[10px] p-5 flex flex-col items-center">
+                            <div class="slider flex">
+                                <label for="redSlider"
+                                    class="bg-red-300 block w-[25px] h-[25px] rounded-full me-5"></label>
+                                <input type="range" min="0" max="255" value="0" id="redSlider" />
+                            </div>
+                            <div class="slider flex">
+                                <label for="greenSlider"
+                                    class="bg-green-300 block w-[25px] h-[25px] rounded-full me-5"></label>
+                                <input type="range" min="0" max="255" value="0" id="greenSlider" />
+                            </div>
+                            <div class="slider flex">
+                                <label for="blueSlider"
+                                    class="bg-blue-300 block w-[25px] h-[25px] rounded-full me-5"></label>
+                                <input type="range" min="0" max="255" value="0" id="blueSlider" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="colorUse flex items-center justify-center gap-[20px]">
+                    <div
+                        class="colorCode bg-[#e3e3e3] shadow-md w-[150px] h-[50px] rounded-[10px] p-[10px] flex justify-center items-center border border-gray-500 ">
+                        <div id="rgbText"></div>
+                    </div>
+                    <div class="colorCopy w-[50px] h-[50px] flex justify-center items-center rounded-full shadow-md hover:bg-[#e3e3e3] cursor-pointer"
+                        id="colCopy">
+                        <i class="fa-solid fa-copy cursor-pointer text-white"
+                            style="display: block; text-shadow: 2px 2px 5px rgba(18, 18, 18, 0.845);"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <!-- -------------------------------------------------------------------------  Accordion Section Starts -->
+
+
+    <div class="accordion-section flex flex-col gap-[50px]" id="faq">
+
+        <div class="hidden xl:flex accordion-title relative z-10 w-full p-[20px] text-yellow-200
+            justify-center items-center text-[180px] text-poppins font-semibold"
+            style="text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.332);">
+            ACCORDION
+        </div>
+        <div class="hidden xl:block accordion w-[1200px] relative top-[-150px] z-20 bg-gray-100">
+            <!-- Question 1 -->
+            <div class="mb-4">
+                <div id="question1"
+                    class="question-strip  cursor-pointer w-full text-left py-2 px-4 h-[60px] flex justify-start px-5 text-xl items-center bg-yellow-200 text-gray-800 rounded"
+                    onclick="toggleAccordion(this)">
+                    What is HTML?
+                </div>
+                <div style="display: none;" class="accordion-content bg-white p-4 rounded-b">
+                    HTML stands for HyperText Markup Language. It is the standard markup language for creating web pages
+                    and web applications. HTML describes the structure of a web page semantically and originally
+                    included cues for the appearance of the document.
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="mb-4">
+                <div id="question2"
+                    class="question-strip  cursor-pointer w-full text-left py-2 px-4 h-[60px] flex justify-start px-5 text-xl items-center bg-yellow-200 text-gray-800 rounded"
+                    onclick="toggleAccordion(this)">
+                    What is CSS?
+
+                </div>
+                <div style="display: none;" class="accordion-content bg-white p-4 rounded-b">
+                    CSS stands for Cascading Style Sheets. It is a style sheet language used for describing the
+                    presentation of a document written in HTML or XML. CSS describes how elements should be rendered on
+                    screen, on paper, in speech, or on other media.
+                </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="mb-4">
+                <div id="question3"
+                    class="question-strip  cursor-pointer w-full text-left py-2 px-4 h-[60px] flex justify-start px-5 text-xl items-center bg-yellow-200 text-gray-800 rounded"
+                    onclick="toggleAccordion(this)">
+                    What is JavaScript?
+
+                </div>
+                <div style="display: none;" class="accordion-content bg-white p-4 rounded-b">
+                    JavaScript is a high-level, often just-in-time compiled, and multi-paradigm programming language. It
+                    has curly-bracket syntax, dynamic typing, prototype-based object-orientation, and first-class
+                    functions. It is one of the core technologies of the World Wide Web, alongside HTML and CSS.
+                </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="mb-4">
+                <div id="question4"
+                    class="question-strip  cursor-pointer w-full text-left py-2 px-4 h-[60px] flex justify-start px-5 text-xl items-center bg-yellow-200 text-gray-800 rounded"
+                    onclick="toggleAccordion(this)">
+                    What is responsive web design?
+
+                </div>
+                <div style="display: none;" class="accordion-content bg-white p-4 rounded-b">
+                    Responsive web design is an approach to web design that makes web pages render well on a variety of
+                    devices and window or screen sizes. Recent work also considers the viewer proximity as part of the
+                    viewing context as an extension for RWD.
+                </div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="mb-4">
+                <div id="question5"
+                    class="question-strip  cursor-pointer w-full text-left py-2 px-4 h-[60px] flex justify-start px-5 text-xl items-center bg-yellow-200 text-gray-800 rounded"
+                    onclick="toggleAccordion(this)">
+                    What are front-end and back-end development?
+                </div>
+                <ul style="display: none;" class="accordion-content bg-white p-4 rounded-b flex flex-col gap-5">
+
+                    <li>
+                        Front-end development refers to the part of web development that involves creating the user
+                        interface and user experience aspects of a website or application. It primarily deals with HTML,
+                        CSS, and JavaScript.
+                    </li>
+                    <li>
+                        Back-end development involves the server-side development. It focuses on databases, scripting,
+                        and
+                        website architecture. It contains behind-the-scenes activities that occur when performing any
+                        action
+                        on a website.
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="xl:hidden text-orange-500">
+            <span class="text-red-500">*Note:</span>
+            Accordion is Only Visible on Bigger Screens like desktop. 
+            <span class="text-red-500">*</span>
+        </div>
+    </div>
+
+
+
+    <!-- -------------------------------------------------------------------------  Footer  Section Starts -->
+
+    <footer class="w-full p-4">
+        <div class="max-w-[1100px] mx-auto text-center">
+            <p>&copy; 2024 DOMination. All rights reserved Naval Rathore.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
